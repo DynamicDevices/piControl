@@ -201,34 +201,42 @@ static int __init piControlInit(void)
 	wait_for_device_probe();
 
 	pr_info("built: %s\n", COMPILETIME);
+	pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 
 	if (of_machine_is_compatible("kunbus,revpi-compact")) {
 		piDev_g.machine_type = REVPI_COMPACT;
+		pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 		pr_info("RevPi Compact\n");
 	} else if (of_machine_is_compatible("kunbus,revpi-connect")) {
 		piDev_g.machine_type = REVPI_CONNECT;
+		pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 		piDev_g.pibridge_supported = 1;
 		piDev_g.only_left_pibridge = 1;
 		piDev_g.revpi_gate_supported = 1;
 		pr_info("RevPi Connect\n");
 	} else if (of_machine_is_compatible("kunbus,revpi-connect-se")) {
 		piDev_g.machine_type = REVPI_CONNECT_SE;
+		pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 		piDev_g.pibridge_supported = 1;
 		piDev_g.only_left_pibridge = 1;
 		pr_info("RevPi Connect SE\n");
 	} else if (of_machine_is_compatible("kunbus,revpi-connect4")) {
 		piDev_g.machine_type = REVPI_CONNECT_4;
+		pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 		piDev_g.pibridge_supported = 1;
 		pr_info("RevPi Connect 4\n");
 	} else if (of_machine_is_compatible("kunbus,revpi-flat")) {
 		piDev_g.machine_type = REVPI_FLAT;
+		pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 		pr_info("RevPi Flat\n");
 	} else if (of_machine_is_compatible("kunbus,revpi-core-se")) {
 		piDev_g.machine_type = REVPI_CORE_SE;
+		pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 		piDev_g.pibridge_supported = 1;
 		pr_info("RevPi Core SE\n");
 	} else {
 		piDev_g.machine_type = REVPI_CORE;
+		pr_info("----- piDev_g.machine_type: %d -----\n", piDev_g.machine_type);
 		piDev_g.pibridge_supported = 1;
 		piDev_g.revpi_gate_supported = 1;
 		pr_info("RevPi Core\n");
